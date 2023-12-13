@@ -78,7 +78,6 @@ public class ChemQuiz{
         holdQuestion.setLineWrap(true); //if text runs off screen it makes it go to next line 
         holdQuestion.setWrapStyleWord(true); // makes it so it wraps the whole word and makes it so it doesnt cut off a letter
         holdQuestion.setForeground(Color.BLACK); 
-        holdQuestion.setBackground(Color.GRAY);
         holdQuestion.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
         holdQuestion.setBackground(Color.GRAY);
         holdQuestion.setEnabled(false);
