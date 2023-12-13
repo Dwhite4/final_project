@@ -159,13 +159,13 @@ public class ChemQuiz{
             // TODO Auto-generated method stub
             
 
-            if(e.getSource()==aButton){ // idea from lab 14 (checks to see if button is pressed)
+            if(e.getSource()==aButton){ // idea from lab 14 (checks to see if button is pressed) gets the source and if the source of the press is the same as where the A button is located, it sets the acutal answer to A
                 actualAnswer= 'A';
-                if(actualAnswer == chemAnswers[index]) { //if the actual answer is the same as chemAnswers as the given index, increase correctResponse Index
-                    correctResponse++;
+                if(actualAnswer == chemAnswers[index]) { //if the actual answer is the same as chemAnswers as the given index
+                    correctResponse++;  //increase index by 1 for correct responses(increases score by 1)
                 }
             }
-            displayAnswer();
+            displayQuizAnswer();        
         }
        
     }
@@ -182,7 +182,7 @@ public class ChemQuiz{
                     correctResponse++;
                 }
             }
-            displayAnswer();  
+            displayQuizAnswer();  
         }
         
     }
@@ -198,7 +198,7 @@ public class ChemQuiz{
                 if(actualAnswer == chemAnswers[index]) { //if the actual answer is c in the chem answers at that index,
                     correctResponse++;
                 }
-                displayAnswer();
+                displayQuizAnswer();
             }
         }
         
@@ -215,11 +215,11 @@ public class ChemQuiz{
                 if(actualAnswer == chemAnswers[index]) { //if match, increase final score
                     correctResponse++;
                 }
-                displayAnswer();
+                displayQuizAnswer();
             }
         }  
     }
-    public void displayAnswer() {
+    public void displayQuizAnswer() {
         index++;
         changeQuestion();
     }
