@@ -118,7 +118,6 @@ public class ChemQuiz{
         quizFrame.add(answerB);
 
         answerC.setBounds(125,280,500,100);
-
         answerC.setForeground(Color.BLACK);
         answerC.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
         quizFrame.add(answerC);
@@ -140,12 +139,12 @@ public class ChemQuiz{
     }
 
     public void changeQuestion(){      
-        if (index>=totalQuestions){
+        if (index>=totalQuestions){ //if the index is grater than or equal to the number of total questions, it will display the results of the quiz
         resultOfQuiz();
     }
     else { 
         holdQuestion.setText(chemQuestions[index]); //when question number increases, it gets the question the index is accosiated with 
-        answerA.setText(chemOptions[index][0]); // looks at chemOptions and assigns correct index to button based on what the 
+        answerA.setText(chemOptions[index][0]); // looks at chemOptions and assigns correct index to button based on what the question associated with it is.
         answerB.setText(chemOptions[index][1]);
         answerC.setText(chemOptions[index][2]);
         answerD.setText(chemOptions[index][3]);
