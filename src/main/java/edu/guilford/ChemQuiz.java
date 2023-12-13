@@ -6,12 +6,13 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+//author david white
 
 public class ChemQuiz{
 
@@ -26,6 +27,7 @@ public class ChemQuiz{
     private JLabel answerD = new JLabel();
     private JTextField correctAnswers = new JTextField("");
     
+    //array holding chemestry questions
     String[] chemQuestions = {
         "What Element is Ar?",
         "Which one of these is a balanced Chemical Equasion?",
@@ -48,7 +50,7 @@ public class ChemQuiz{
 
     private int index;
     private int correctResponse;
-    private int totalQuestions = chemQuestions.length;
+    private int totalQuestions = 7;
     private char actualAnswer;
         //sets what the correct answers are 
     char[] chemAnswers = {
@@ -78,7 +80,6 @@ public class ChemQuiz{
         holdQuestion.setForeground(Color.BLACK); 
         holdQuestion.setBackground(Color.GRAY);
         holdQuestion.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-        holdQuestion.setBorder(BorderFactory.createBevelBorder(1, Color.BLACK, Color.BLACK));
         holdQuestion.setBackground(Color.GRAY);
         holdQuestion.setEnabled(false);
         quizFrame.add(holdQuestion);
@@ -108,25 +109,22 @@ public class ChemQuiz{
         quizFrame.add(dButton);
         
         answerA.setBounds(125,85,500,100);
-        answerA.setBackground(Color.GRAY);
         answerA.setForeground(Color.BLACK);
         answerA.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
         quizFrame.add(answerA);
 
         answerB.setBounds(125,180,500,100);
-        answerB.setBackground(Color.GRAY);
         answerB.setForeground(Color.BLACK);
         answerB.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
         quizFrame.add(answerB);
 
         answerC.setBounds(125,280,500,100);
-        answerC.setBackground(Color.GRAY);
+
         answerC.setForeground(Color.BLACK);
         answerC.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
         quizFrame.add(answerC);
 
         answerD.setBounds(125,380,500,100);
-        answerD.setBackground(Color.GRAY);
         answerD.setForeground(Color.BLACK);
         answerD.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
         quizFrame.add(answerD);
@@ -134,7 +132,7 @@ public class ChemQuiz{
         correctAnswers.setBounds(285,362,200,100);
         correctAnswers.setBackground(Color.GRAY);
         correctAnswers.setForeground(Color.BLACK);
-        correctAnswers.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
+        correctAnswers.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
         correctAnswers.setHorizontalAlignment(JTextField.CENTER);
         correctAnswers.setEditable(false);
         quizFrame.add(correctAnswers);
@@ -142,7 +140,7 @@ public class ChemQuiz{
         changeQuestion();
     }
 
-    public void changeQuestion(){
+    public void changeQuestion(){      
         if (index>=totalQuestions){
         resultOfQuiz();
     }
@@ -230,7 +228,7 @@ public class ChemQuiz{
 
     private void resultOfQuiz() {
         
-        correctAnswers.setText(correctResponse+ "/" + totalQuestions);
+        correctAnswers.setText(correctResponse+ " out of " + totalQuestions);
         
     }
 
